@@ -1,317 +1,589 @@
 {
-  "definitions": {},
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://example.com/root.json",
   "type": "object",
   "title": "The Root Schema",
   "required": [
-    "error",
     "result"
   ],
   "properties": {
-    "error": {
-      "$id": "#/properties/error",
-      "type": "null",
-      "title": "The Error Schema",
-      "default": null,
-      "examples": [
-        null
-      ]
-    },
     "result": {
-      "$id": "#/properties/result",
       "type": "array",
       "title": "The Result Schema",
+      "minItems": 1,
       "items": {
-        "$id": "#/properties/result/items",
         "type": "object",
         "title": "The Items Schema",
-        "required": [
-          "id",
-          "city_id",
-          "timezone",
-          "timezone_gmt",
-          "name",
-          "name_orig",
-          "name_ascii",
-          "city_slug",
-          "lat",
-          "lng",
-          "hotels",
-          "population",
-          "fcode",
-          "type",
-          "country_code",
-          "country_slug",
-          "currency",
-          "stars",
-          "country",
-          "admin1code",
-          "admin2code",
-          "map_view",
-          "city_img",
-          "src",
-          "rel",
-          "iata"
-        ],
-        "properties": {
-          "id": {
-            "$id": "#/properties/result/items/properties/id",
-            "type": "integer",
-            "title": "The Id Schema",
-            "default": 0,
-            "examples": [
-              524901
-            ]
-          },
-          "city_id": {
-            "$id": "#/properties/result/items/properties/city_id",
-            "type": "integer",
-            "title": "The City_id Schema",
-            "default": 0,
-            "examples": [
-              524901
-            ]
-          },
-          "timezone": {
-            "$id": "#/properties/result/items/properties/timezone",
-            "type": "string",
-            "title": "The Timezone Schema",
-            "default": "",
-            "examples": [
-              "Europe/Moscow"
+        "anyOf": [
+          {
+            "title": "typeGeo",
+            "required": [
+              "city_id",
+              "city_slug",
+              "country",
+              "country_code",
+              "country_slug",
+              "currency",
+              "id",
+              "lat",
+              "lng",
+              "name",
+              "name_ascii",
+              "rel",
+              "src",
+              "stars",
+              "timezone",
+              "timezone_gmt",
+              "type"
             ],
-            "pattern": "^(.*)$"
-          },
-          "timezone_gmt": {
-            "$id": "#/properties/result/items/properties/timezone_gmt",
-            "type": "integer",
-            "title": "The Timezone_gmt Schema",
-            "default": 0,
-            "examples": [
-              3
-            ]
-          },
-          "name": {
-            "$id": "#/properties/result/items/properties/name",
-            "type": "string",
-            "title": "The Name Schema",
-            "default": "",
-            "examples": [
-              "Москва"
-            ],
-            "pattern": "^(.*)$"
-          },
-          "name_orig": {
-            "$id": "#/properties/result/items/properties/name_orig",
-            "type": "string",
-            "title": "The Name_orig Schema",
-            "default": "",
-            "examples": [
-              "Moscow"
-            ],
-            "pattern": "^(.*)$"
-          },
-          "name_ascii": {
-            "$id": "#/properties/result/items/properties/name_ascii",
-            "type": "string",
-            "title": "The Name_ascii Schema",
-            "default": "",
-            "examples": [
-              "Moscow"
-            ],
-            "pattern": "^(.*)$"
-          },
-          "city_slug": {
-            "$id": "#/properties/result/items/properties/city_slug",
-            "type": "string",
-            "title": "The City_slug Schema",
-            "default": "",
-            "examples": [
-              "moscow"
-            ],
-            "pattern": "^(.*)$"
-          },
-          "lat": {
-            "$id": "#/properties/result/items/properties/lat",
-            "type": "number",
-            "title": "The Lat Schema",
-            "default": 0.0,
-            "examples": [
-              55.75222
-            ]
-          },
-          "lng": {
-            "$id": "#/properties/result/items/properties/lng",
-            "type": "number",
-            "title": "The Lng Schema",
-            "default": 0.0,
-            "examples": [
-              37.61556
-            ]
-          },
-          "hotels": {
-            "$id": "#/properties/result/items/properties/hotels",
-            "type": "integer",
-            "title": "The Hotels Schema",
-            "default": 0,
-            "examples": [
-              6827
-            ]
-          },
-          "population": {
-            "$id": "#/properties/result/items/properties/population",
-            "type": "integer",
-            "title": "The Population Schema",
-            "default": 0,
-            "examples": [
-              10381222
-            ]
-          },
-          "fcode": {
-            "$id": "#/properties/result/items/properties/fcode",
-            "type": "string",
-            "title": "The Fcode Schema",
-            "default": "",
-            "examples": [
-              "PPLC"
-            ],
-            "pattern": "^(.*)$"
-          },
-          "type": {
-            "$id": "#/properties/result/items/properties/type",
-            "type": "string",
-            "title": "The Type Schema",
-            "default": "",
-            "examples": [
-              "geo"
-            ],
-            "pattern": "^(.*)$"
-          },
-          "country_code": {
-            "$id": "#/properties/result/items/properties/country_code",
-            "type": "string",
-            "title": "The Country_code Schema",
-            "default": "",
-            "examples": [
-              "RU"
-            ],
-            "pattern": "^(.*)$"
-          },
-          "country_slug": {
-            "$id": "#/properties/result/items/properties/country_slug",
-            "type": "string",
-            "title": "The Country_slug Schema",
-            "default": "",
-            "examples": [
-              "russia"
-            ],
-            "pattern": "^(.*)$"
-          },
-          "currency": {
-            "$id": "#/properties/result/items/properties/currency",
-            "type": "string",
-            "title": "The Currency Schema",
-            "default": "",
-            "examples": [
-              "RUB"
-            ],
-            "pattern": "^(.*)$"
-          },
-          "stars": {
-            "$id": "#/properties/result/items/properties/stars",
-            "type": "string",
-            "title": "The Stars Schema",
-            "default": "",
-            "examples": [
-              "6042,59,184,365,145,32"
-            ],
-            "pattern": "^(.*)$"
-          },
-          "country": {
-            "$id": "#/properties/result/items/properties/country",
-            "type": "string",
-            "title": "The Country Schema",
-            "default": "",
-            "examples": [
-              "Россия"
-            ],
-            "pattern": "^(.*)$"
-          },
-          "admin1code": {
-            "$id": "#/properties/result/items/properties/admin1code",
-            "type": "null",
-            "title": "The Admin1code Schema",
-            "default": null,
-            "examples": [
-              null
-            ]
-          },
-          "admin2code": {
-            "$id": "#/properties/result/items/properties/admin2code",
-            "type": "null",
-            "title": "The Admin2code Schema",
-            "default": null,
-            "examples": [
-              null
-            ]
-          },
-          "map_view": {
-            "$id": "#/properties/result/items/properties/map_view",
-            "type": "array",
-            "title": "The Map_view Schema",
-            "items": {
-              "$id": "#/properties/result/items/properties/map_view/items",
-              "type": "number",
-              "title": "The Items Schema",
-              "default": 0.0,
-              "examples": [
-                55.7609294199,
-                37.6157283783,
-                13
-              ]
+            "properties": {
+              "city_id": {
+                "type": "integer",
+                "title": "The City_id Schema",
+                "default": 0
+              },
+              "city_slug": {
+                "type": "string",
+                "title": "The City_slug Schema",
+                "default": "",
+                "pattern": "^(.*)$"
+              },
+              "country_code": {
+                "type": "string",
+                "title": "The Country_code Schema",
+                "default": "",
+                "pattern": "^(.*)$"
+              },
+              "country_slug": {
+                "type": "string",
+                "title": "The Country_slug Schema",
+                "default": "",
+                "pattern": "^(.*)$"
+              },
+              "country": {
+                "type": "string",
+                "title": "The Country Schema",
+                "default": "",
+                "pattern": "^(.*)$"
+              },
+              "currency": {
+                "type": "string",
+                "title": "The Currency Schema",
+                "default": ""
+              },
+              "id": {
+                "type": "integer",
+                "title": "The Id Schema",
+                "default": 0
+              },
+              "lat": {
+                "type": "number",
+                "title": "The Lat Schema",
+                "default": 0.0
+              },
+              "lng": {
+                "type": "number",
+                "title": "The Lng Schema",
+                "default": 0.0
+              },
+              "name": {
+                "type": "string",
+                "title": "The Name Schema",
+                "default": "",
+                "pattern": "^(.*)$"
+              },
+              "name_ascii": {
+                "type": "string",
+                "title": "The Name_ascii Schema",
+                "default": "",
+                "pattern": "^(.*)$"
+              },
+              "src": {
+                "type": "string",
+                "title": "The Src Schema",
+                "default": "",
+                "pattern": "^(.*)$"
+              },
+              "rel": {
+                "type": "integer",
+                "title": "The Rel Schema",
+                "default": 0
+              },
+              "type": {
+                "type": "string",
+                "title": "The Type Schema",
+                "default": "",
+                "pattern": "^(.*)$"
+              },
+              "stars": {
+                "type": [
+                  "null",
+                  "string"
+                ],
+                "title": "The Stars Schema",
+                "default": null
+              },
+              "timezone": {
+                "type": "string",
+                "title": "The Timezone Schema",
+                "default": "",
+                "pattern": "^(.*)$"
+              },
+              "timezone_gmt": {
+                "type": [
+                  "integer",
+                  "number"
+                ],
+                "title": "The Timezone_gmt Schema",
+                "default": 0
+              },
+              "city_img": {
+                "type": "string",
+                "title": "The City_img Schema",
+                "default": ""
+              },
+              "fcode": {
+                "type": "string",
+                "title": "The Fcode Schema",
+                "default": ""
+              },
+              "hotels": {
+                "type": "integer",
+                "title": "The Hotels Schema",
+                "default": 0
+              },
+              "name_orig": {
+                "type": "string",
+                "title": "The Name_orig Schema",
+                "default": ""
+              },
+              "population": {
+                "type": "integer",
+                "title": "The Population Schema",
+                "default": 0
+              }
             }
           },
-          "city_img": {
-            "$id": "#/properties/result/items/properties/city_img",
-            "type": "string",
-            "title": "The City_img Schema",
-            "default": "",
-            "examples": [
-              "https://efd327ea5099386984b1-470824097daaa7ec45b08d0f677746ea.ssl.cf3.rackcdn.com/_city_img_350%D1%85140.jpg"
+          {
+            "title": "typeHotel",
+            "required": [
+              "city_id",
+              "city_name",
+              "city_name_ascii",
+              "city_slug",
+              "country",
+              "country_code",
+              "country_slug",
+              "id",
+              "lat",
+              "lng",
+              "name",
+              "name_ascii",
+              "rel",
+              "src",
+              "stars",
+              "timezone",
+              "timezone_gmt",
+              "type",
+              "type_id",
+              "state",
+              "fr_stars"
             ],
-            "pattern": "^(.*)$"
+            "properties": {
+              "city_iata": {
+                "type": "string",
+                "title": "The City_iata Schema",
+                "default": ""
+              },
+              "city_id": {
+                "type": "integer",
+                "title": "The City_id Schema",
+                "default": 0
+              },
+              "city_name_ascii": {
+                "type": "string",
+                "title": "The City_name_ascii Schema",
+                "default": ""
+              },
+              "city_name": {
+                "type": "string",
+                "title": "The City_name Schema",
+                "default": ""
+              },
+              "city_slug": {
+                "type": "string",
+                "title": "The City_slug Schema",
+                "default": "",
+                "pattern": "^(.*)$"
+              },
+              "country_code": {
+                "type": "string",
+                "title": "The Country_code Schema",
+                "default": "",
+                "pattern": "^(.*)$"
+              },
+              "country_slug": {
+                "type": "string",
+                "title": "The Country_slug Schema",
+                "default": "",
+                "pattern": "^(.*)$"
+              },
+              "country": {
+                "type": "string",
+                "title": "The Country Schema",
+                "default": "",
+                "pattern": "^(.*)$"
+              },
+              "id": {
+                "type": "integer",
+                "title": "The Id Schema",
+                "default": 0
+              },
+              "lat": {
+                "type": "number",
+                "title": "The Lat Schema",
+                "default": 0.0
+              },
+              "lng": {
+                "type": "number",
+                "title": "The Lng Schema",
+                "default": 0.0
+              },
+              "name": {
+                "type": "string",
+                "title": "The Name Schema",
+                "default": "",
+                "pattern": "^(.*)$"
+              },
+              "name_ascii": {
+                "type": "string",
+                "title": "The Name_ascii Schema",
+                "default": "",
+                "pattern": "^(.*)$"
+              },
+              "src": {
+                "type": "string",
+                "title": "The Src Schema",
+                "default": "",
+                "pattern": "^(.*)$"
+              },
+              "rel": {
+                "type": "integer",
+                "title": "The Rel Schema",
+                "default": 0
+              },
+              "type": {
+                "type": "string",
+                "title": "The Type Schema",
+                "default": "",
+                "pattern": "^(.*)$"
+              },
+              "stars": {
+                "type": [
+                  "null",
+                  "integer"
+                ],
+                "title": "The Stars Schema",
+                "default": null
+              },
+              "timezone": {
+                "type": "string",
+                "title": "The Timezone Schema",
+                "default": "",
+                "pattern": "^(.*)$"
+              },
+              "timezone_gmt": {
+                "type": [
+                  "integer",
+                  "number"
+                ],
+                "title": "The Timezone_gmt Schema",
+                "default": 0
+              },
+              "city_img": {
+                "type": "string",
+                "title": "The City_img Schema",
+                "default": ""
+              },
+              "fcode": {
+                "type": "string",
+                "title": "The Fcode Schema",
+                "default": ""
+              },
+              "type_id": {
+                "type": "integer",
+                "title": "The Type_id Schema",
+                "default": 0
+              },
+              "state": {
+                "type": [
+                  "null",
+                  "string"
+                ],
+                "title": "The State Schema",
+                "default": null
+              },
+              "fr_stars": {
+                "type": [
+                  "null",
+                  "integer",
+                  "number"
+                ],
+                "title": "The Fr_stars Schema",
+                "default": null
+              }
+            }
           },
-          "src": {
-            "$id": "#/properties/result/items/properties/src",
-            "type": "string",
-            "title": "The Src Schema",
-            "default": "",
-            "examples": [
-              "d"
+          {
+            "title": "typeAirport",
+            "required": [
+              "city",
+              "city_id",
+              "city_slug",
+              "country",
+              "country_code",
+              "country_slug",
+              "currency",
+              "iata",
+              "id",
+              "lat",
+              "lng",
+              "name",
+              "name_ascii",
+              "rel",
+              "src",
+              "timezone",
+              "timezone_gmt",
+              "type"
             ],
-            "pattern": "^(.*)$"
+            "properties": {
+              "city": {
+                "type": "string",
+                "title": "The City Schema",
+                "default": ""
+              },
+              "city_id": {
+                "type": "integer",
+                "title": "The City_id Schema",
+                "default": 0
+              },
+              "city_slug": {
+                "type": "string",
+                "title": "The City_slug Schema",
+                "default": "",
+                "pattern": "^(.*)$"
+              },
+              "country_code": {
+                "type": "string",
+                "title": "The Country_code Schema",
+                "default": "",
+                "pattern": "^(.*)$"
+              },
+              "country_slug": {
+                "type": "string",
+                "title": "The Country_slug Schema",
+                "default": "",
+                "pattern": "^(.*)$"
+              },
+              "country": {
+                "type": "string",
+                "title": "The Country Schema",
+                "default": "",
+                "pattern": "^(.*)$"
+              },
+              "currency": {
+                "type": "string",
+                "title": "The Currency Schema",
+                "default": ""
+              },
+              "iata": {
+                "type": "string",
+                "title": "The Iata Schema",
+                "default": ""
+              },
+              "id": {
+                "type": "integer",
+                "title": "The Id Schema",
+                "default": 0
+              },
+              "lat": {
+                "type": "number",
+                "title": "The Lat Schema",
+                "default": 0.0
+              },
+              "lng": {
+                "type": "number",
+                "title": "The Lng Schema",
+                "default": 0.0
+              },
+              "name": {
+                "type": "string",
+                "title": "The Name Schema",
+                "default": "",
+                "pattern": "^(.*)$"
+              },
+              "name_ascii": {
+                "type": "string",
+                "title": "The Name_ascii Schema",
+                "default": "",
+                "pattern": "^(.*)$"
+              },
+              "src": {
+                "type": "string",
+                "title": "The Src Schema",
+                "default": "",
+                "pattern": "^(.*)$"
+              },
+              "rel": {
+                "type": "integer",
+                "title": "The Rel Schema",
+                "default": 0
+              },
+              "type": {
+                "type": "string",
+                "title": "The Type Schema",
+                "default": "",
+                "pattern": "^(.*)$"
+              },
+              "timezone": {
+                "type": "string",
+                "title": "The Timezone Schema",
+                "default": "",
+                "pattern": "^(.*)$"
+              },
+              "timezone_gmt": {
+                "type": [
+                  "integer",
+                  "number"
+                ],
+                "title": "The Timezone_gmt Schema",
+                "default": 0
+              }
+            }
           },
-          "rel": {
-            "$id": "#/properties/result/items/properties/rel",
-            "type": "integer",
-            "title": "The Rel Schema",
-            "default": 0,
-            "examples": [
-              4554228
-            ]
-          },
-          "iata": {
-            "$id": "#/properties/result/items/properties/iata",
-            "type": "string",
-            "title": "The Iata Schema",
-            "default": "",
-            "examples": [
-              "MOW"
+          {
+            "title": "typeTourism",
+            "required": [
+              "city_id",
+              "city_slug",
+              "country",
+              "country_code",
+              "country_slug",
+              "currency",
+              "id",
+              "lat",
+              "lng",
+              "name",
+              "name_ascii",
+              "rel",
+              "src",
+              "stars",
+              "timezone",
+              "timezone_gmt",
+              "type"
             ],
-            "pattern": "^(.*)$"
+            "properties": {
+              "city_id": {
+                "type": "integer",
+                "title": "The City_id Schema",
+                "default": 0
+              },
+              "city_slug": {
+                "type": "string",
+                "title": "The City_slug Schema",
+                "default": "",
+                "pattern": "^(.*)$"
+              },
+              "country_code": {
+                "type": "string",
+                "title": "The Country_code Schema",
+                "default": "",
+                "pattern": "^(.*)$"
+              },
+              "country_slug": {
+                "type": "string",
+                "title": "The Country_slug Schema",
+                "default": "",
+                "pattern": "^(.*)$"
+              },
+              "country": {
+                "type": "string",
+                "title": "The Country Schema",
+                "default": "",
+                "pattern": "^(.*)$"
+              },
+              "currency": {
+                "type": "string",
+                "title": "The Currency Schema",
+                "default": ""
+              },
+              "id": {
+                "type": "integer",
+                "title": "The Id Schema",
+                "default": 0
+              },
+              "lat": {
+                "type": "number",
+                "title": "The Lat Schema",
+                "default": 0.0
+              },
+              "lng": {
+                "type": "number",
+                "title": "The Lng Schema",
+                "default": 0.0
+              },
+              "name": {
+                "type": "string",
+                "title": "The Name Schema",
+                "default": "",
+                "pattern": "^(.*)$"
+              },
+              "name_ascii": {
+                "type": "string",
+                "title": "The Name_ascii Schema",
+                "default": "",
+                "pattern": "^(.*)$"
+              },
+              "src": {
+                "type": "string",
+                "title": "The Src Schema",
+                "default": "",
+                "pattern": "^(.*)$"
+              },
+              "rel": {
+                "type": "integer",
+                "title": "The Rel Schema",
+                "default": 0
+              },
+              "type": {
+                "type": "string",
+                "title": "The Type Schema",
+                "default": "",
+                "pattern": "^(.*)$"
+              },
+              "timezone": {
+                "type": "string",
+                "title": "The Timezone Schema",
+                "default": "",
+                "pattern": "^(.*)$"
+              },
+              "timezone_gmt": {
+                "type": [
+                  "integer",
+                  "number"
+                ],
+                "title": "The Timezone_gmt Schema",
+                "default": 0
+              },
+              "stars": {
+                "type": [
+                  "null",
+                  "string"
+                ],
+                "title": "The Stars Schema",
+                "default": null
+              }
+            }
           }
-        }
+        ]
       }
     }
   }
