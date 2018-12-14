@@ -4,6 +4,7 @@ import io.restassured.RestAssured;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import ru.ott.autotest.model.ParametersList;
+
 import static io.restassured.RestAssured.given;
 import static io.restassured.module.jsv.JsonSchemaValidator.matchesJsonSchemaInClasspath;
 
@@ -38,6 +39,3 @@ public class SuggestRequest {
                 .body(matchesJsonSchemaInClasspath("schema.json"));
     }
 }
-
-
-
